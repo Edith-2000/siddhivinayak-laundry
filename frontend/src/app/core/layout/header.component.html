@@ -1,0 +1,85 @@
+<header class="w-full bg-white shadow-sm sticky top-0 z-50">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+    <!-- Logo -->
+    <div class="flex items-center gap-2 group cursor-pointer">
+      <div class="w-10 h-10 bg-black rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform">
+        <span class="text-white font-bold text-lg">S</span>
+      </div>
+      <span class="font-bold text-lg text-black hidden sm:block">Siddhivinayak</span>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex items-center gap-8">
+      <a routerLink="/" class="text-sm font-medium text-gray-700 hover:text-black transition-colors">Home</a>
+      <a href="#services" class="text-sm font-medium text-gray-700 hover:text-black transition-colors">Services</a>
+      <a href="#pricing" class="text-sm font-medium text-gray-700 hover:text-black transition-colors">Pricing</a>
+      <a href="#contact" class="text-sm font-medium text-gray-700 hover:text-black transition-colors">Contact</a>
+    </div>
+
+    <!-- CTA Buttons -->
+    <div class="hidden md:flex items-center gap-3">
+      <button class="px-6 py-2 text-sm font-medium text-gray-700 rounded-full hover:bg-gray-100 transition-colors">
+        Sign In
+      </button>
+      <button class="px-6 py-2 text-sm font-medium text-white bg-black rounded-full hover:bg-gray-900 transition-colors">
+        Get Started
+      </button>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      (click)="toggleMenu()"
+      class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path *ngIf="!isMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        <path *ngIf="isMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <div
+    *ngIf="isMenuOpen"
+    class="md:hidden bg-white border-t border-gray-200"
+  >
+    <div class="px-4 py-4 space-y-3">
+      <a
+        routerLink="/"
+        (click)="closeMenu()"
+        class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+      >
+        Home
+      </a>
+      <a
+        href="#services"
+        (click)="closeMenu()"
+        class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+      >
+        Services
+      </a>
+      <a
+        href="#pricing"
+        (click)="closeMenu()"
+        class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+      >
+        Pricing
+      </a>
+      <a
+        href="#contact"
+        (click)="closeMenu()"
+        class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+      >
+        Contact
+      </a>
+      <div class="pt-4 flex gap-2">
+        <button class="flex-1 px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-full hover:bg-gray-50 transition-colors">
+          Sign In
+        </button>
+        <button class="flex-1 px-4 py-2 text-sm font-medium text-white bg-black rounded-full hover:bg-gray-900 transition-colors">
+          Get Started
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

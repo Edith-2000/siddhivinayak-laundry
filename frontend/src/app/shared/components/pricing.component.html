@@ -1,0 +1,68 @@
+<section id="pricing" class="w-full bg-gray-50 py-20 md:py-32 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-black mb-4">
+        Simple, Transparent Pricing
+      </h2>
+      <p class="text-lg text-gray-600">
+        Choose the perfect plan for your laundry needs. All plans include free pickup and delivery.
+      </p>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-6">
+      <div
+        *ngFor="let plan of plans"
+        [class.ring-2]="plan.isPopular"
+        [class.ring-black]="plan.isPopular"
+        [class.transform]="plan.isPopular"
+        [class.md:scale-105]="plan.isPopular"
+        class="relative bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl"
+      >
+        <!-- Popular Badge -->
+        <div *ngIf="plan.isPopular" class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+          <span class="bg-black text-white px-4 py-1 rounded-full text-xs font-semibold">
+            Most Popular
+          </span>
+        </div>
+
+        <!-- Plan Name -->
+        <h3 class="text-2xl font-bold text-black mb-2">{{ plan.name }}</h3>
+        <p class="text-gray-600 text-sm mb-6">{{ plan.description }}</p>
+
+        <!-- Price -->
+        <div class="mb-6">
+          <span class="text-5xl font-bold text-black">${{ plan.price }}</span>
+          <span class="text-gray-600 font-medium">{{ plan.period }}</span>
+        </div>
+
+        <!-- CTA Button -->
+        <button
+          [class.bg-black]="plan.isPopular"
+          [class.text-white]="plan.isPopular"
+          [class.bg-gray-100]="!plan.isPopular"
+          class="w-full py-3 rounded-full font-medium mb-8 transition-all hover:shadow-lg"
+        >
+          {{ plan.cta }}
+        </button>
+
+        <!-- Features List -->
+        <ul class="space-y-4">
+          <li *ngFor="let feature of plan.features" class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-black flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700 text-sm">{{ feature }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Additional Info -->
+    <div class="mt-16 text-center">
+      <p class="text-gray-600 mb-4">All plans include 30-day money-back guarantee</p>
+      <p class="text-sm text-gray-500">Need a custom plan? <a href="#" class="text-black font-medium hover:underline">Contact our sales team</a></p>
+    </div>
+  </div>
+</section>

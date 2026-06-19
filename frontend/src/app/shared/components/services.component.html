@@ -1,0 +1,44 @@
+<section id="services" class="w-full bg-white py-20 md:py-32 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-black mb-4">
+        Our Services
+      </h2>
+      <p class="text-lg text-gray-600">
+        Comprehensive laundry solutions tailored to meet your unique needs
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div
+        *ngFor="let service of services"
+        class="group p-8 bg-gray-50 rounded-2xl border border-gray-200 hover:border-black hover:shadow-lg transition-all duration-300 cursor-pointer"
+      >
+        <!-- Icon -->
+        <div class="text-5xl mb-6 transform group-hover:scale-110 transition-transform">
+          {{ service.icon }}
+        </div>
+
+        <!-- Title -->
+        <h3 class="text-xl font-bold text-black mb-3">
+          {{ service.title }}
+        </h3>
+
+        <!-- Description -->
+        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+          {{ service.description }}
+        </p>
+
+        <!-- Learn More Link -->
+        <a href="#" class="inline-flex items-center gap-2 text-sm font-medium text-black group-hover:gap-3 transition-all">
+          Learn more
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
